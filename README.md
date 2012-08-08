@@ -42,6 +42,10 @@ Required parameters:
 Optional parameters:
 `scope`, `state`
 
+References
+------------
+- [Live Connect developer guide](http://msdn.microsoft.com/en-us/library/live/hh243641)
+
 License
 ---------
 Opauth-GitHub is MIT Licensed  
