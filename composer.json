@@ -1,0 +1,23 @@
+{
+	"name": "opauth/live",
+	"description": "Live Connect strategy for Opauth",
+	"keywords": ["authentication","auth","live", "live connect", "windows", "microsoft", "windows live", "passport"],
+	"homepage": "http://opauth.org",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "U-Zyn Chua",
+			"email": "chua@uzyn.com",
+			"homepage": "http://uzyn.com"
+		}
+	],
+	"require": {
+		"php": ">=5.2.0",
+		"opauth/opauth": ">=0.2.0"
+	},
+	"autoload": {
+		"psr-0": {
+			"": "."
+		}
+	}
+}
