@@ -11,16 +11,16 @@
  * @license      MIT License
  */
 
-namespace Opauth\Strategy\Live;
+namespace Opauth\Live\Strategy;
 
-use Opauth\AbstractStrategy;
+use Opauth\Opauth\AbstractStrategy;
 
 /**
  * Live Connect strategy for Opauth
  *
  * @package			Opauth.Live
  */
-class Strategy extends AbstractStrategy {
+class Live extends AbstractStrategy {
 
 	/**
 	 * Compulsory config keys, listed as unassociative arrays
