@@ -19,13 +19,14 @@ Getting started
    git clone git://github.com/uzyn/opauth-live.git Live
    ```
 
-2. Create a Live Connect application at https://manage.dev.live.com/AddApplication.aspx?tou=1
-   - Once application is created, be sure to go to _My apps_ > _API Settings_ to define your _redirect domain_.
+2. Create a Live Connect application at https://account.live.com/developers/applications
+   - Once application is created, be sure to go to _My apps_ > _API Settings_ to define your _redirect domain_ to be `http://path_to_opauth/live/oauth2callback.`
 
 3. Configure Opauth-Live strategy.
 
 4. Direct user to `http://path_to_opauth/live` to authenticate
 
+5. If `email` field is needed, add `wl.emails` to scope parameter in `LiveStrategy.php` (line 38). E.g., `'scope' => 'wl.basic wl.emails'`.
 
 Strategy configuration
 ----------------------
