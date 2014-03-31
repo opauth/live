@@ -131,5 +131,4 @@ class Live extends AbstractStrategy
 
         return $response;
     }
-
 }
