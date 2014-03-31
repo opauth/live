@@ -78,7 +78,11 @@ class Live extends AbstractStrategy
     {
         $callbackTime = time();
         if (!array_key_exists('code', $_GET) || empty($_GET['code'])) {
-            return $this->response($_GET, array('code' => 'oauth2callback_error'));
+            return $this->error(
+                'Missing code in callback',
+                'oauth2callback_error',
+                $_GET
+            );
         }
 
         $url = 'https://login.live.com/oauth20_token.srf';
@@ -94,11 +98,11 @@ class Live extends AbstractStrategy
         $results = json_decode($response);
 
         if (empty($results->access_token)) {
-            $error = array(
-                'code' => 'access_token_error',
-                'message' => 'Failed when attempting to obtain access token',
+            return $this->error(
+                'Failed when attempting to obtain access token',
+                'access_token_error',
+                $response
             );
-            return $this->response($response, $error);
         }
 
         $data = array('access_token' => $results->access_token);
@@ -106,14 +110,15 @@ class Live extends AbstractStrategy
         $user = $this->recursiveGetObjectVars(json_decode($user));
 
         if (empty($user) || isset($user['message'])) {
-            $error = array(
-                'code' => 'userinfo_error',
-                'message' => 'Failed when attempting to query Live Connect API for user information'
-            );
+            $message = 'Failed when attempting to query Live Connect API for user information';
             if (isset($user['message'])) {
-                $error['message'] = $user['message'];
+                $message = $user['message'];
             }
-            return $this->response($user, $error);
+            return $this->error(
+                $message,
+                'userinfo_error',
+                $user
+            );
         }
 
         $response = $this->response($user);
