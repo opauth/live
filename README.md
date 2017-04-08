@@ -16,7 +16,7 @@ Getting started
 1. Install Opauth-Live:
    ```bash
    cd path_to_opauth/Strategy
-   git clone git://github.com/uzyn/opauth-live.git Live
+   git clone git://github.com/opauth/live.git Live
    ```
 
 2. Create a Live Connect application at https://account.live.com/developers/applications
@@ -52,4 +52,4 @@ License
 Opauth-GitHub is MIT Licensed  
 Copyright © 2012 U-Zyn Chua (http://uzyn.com)
 
-[1]: https://github.com/uzyn/opauth
+[1]: https://github.com/opauth/opauth
