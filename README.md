@@ -18,6 +18,10 @@ Getting started
    cd path_to_opauth/Strategy
    git clone git://github.com/opauth/live.git Live
    ```
+   or
+   ```bash
+   composer require opauth/live
+   ```
 
 2. Create a Live Connect application at https://account.live.com/developers/applications
    - Once application is created, be sure to go to _My apps_ > _API Settings_ to define your _redirect domain_ to be `http://path_to_opauth/live/oauth2callback.`
